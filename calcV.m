@@ -1,12 +1,8 @@
-%%----------------------------------------------%%
-%% param t
-%% result v
-%%----------------------------------------------%%
-function dxi = calcV(t, xi);
-global A B;
+function dxi = circ2(t,xi);
+global u A B;
 if t < 1.5
     u = 0.2;
 else
     u = 0;
 end
-dxi =  B*u - A*xi;
+dxi = A*u - B*xi;
