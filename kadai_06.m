@@ -1,6 +1,6 @@
 clear all
 close all
-global A B K;
+global u K A B;
 th0 = 0.001;
 dth0 = 0;
 M = 0.5;
@@ -21,7 +21,7 @@ a2 = 1/(I + m * l^2);
 q1 = 1;
 q2 = 1;
 
-A = [0, 1; 
+A = [ 0, 1; 
      a1, 0];
 B = [0; a2];
 Q = diag([q1, q2]);
