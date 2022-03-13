@@ -1,6 +1,6 @@
 clear all
 close all
-global A B Q R K;
+global A B K;
 x0 = 0.1;
 th0 = 0.3491;
 dx0 = 0;
@@ -30,7 +30,7 @@ a6 = (m * l * Dx)/((M + m) * I + M * m * l^2);
 a7 = (-1 * (M + m) * Dt)/((M + m) * I + M * m * l^2);
 a8 = (-1 * m * l * G0)/((M + m) * I + M * m * l^2);
 
-q1 = 1;
+q1 = 100;
 q2 = 1;
 q3 = 1;
 q4 = 1;
@@ -46,6 +46,8 @@ R = r;
 K = lqr(A, B, Q, R);
 Eig = eig(A - B * K);
 disp(Eig);
+
+disp(K);
 
 [t,xi] = ode45('calc05', [t0, te], [x0; th0; dx0; dth0]);
 
